@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="property_type_action" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="property_type_list_view" model="ir.ui.view">
+        <field name="name">estate.property.type.list</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">        
+            <list string="Test list">    
+                <field string="Type" name="name" />
+                <field string="Offer count" name="offer_count" />
+            </list>
+        </field>
+    </record>
+
+    <record id="property_type_tree" model="ir.ui.view">
+        <field name="name">estate.property.type.tree</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">  
+            <list string="Types" multi_edit="1">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+
+    <record id="property_type_form" model="ir.ui.view">
+        <field name="name">estate.property.type.form</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">   
+            <form string="test form">
+                <sheet>
+                    <h1 class="mb32">
+                        <field name="name" class="mb8" />
+                    </h1>
+
+                    <button name="%(estate.action_property_offer)d"
+                            type="action"
+                            class="oe_stat_button"
+                            icon="fa-tags">
+                        <field name="offer_count" widget="statinfo" string=" Offers"/>
+                    </button>
+
+                    <ul class="nav nav-tabs mt-5" role="tablist">
+                        <li class="nav-item">
+                            <button name="propertyBtn" class="nav-link active" id="property-tab" data-bs-toggle="tab" data-bs-target="#property-tab-pane" type="button" role="tab" aria-controls="property-tab-pane" aria-current="page">Properties</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="property-tab-pane" role="tabpanel" aria-labelledby="property-tab" tabindex="0">
+                            <div>
+                                <field name="property_ids" class="ms-5">
+                                    <list>
+                                        <field name="name" string="Title" />
+                                        <field name="expected_price" />
+                                        <field name="state" string="Status" />
+                                    </list>
+                                </field>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="property_type_search" model="ir.ui.view">
+        <field name="name">estate.property.type.search</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">        
+            <search string="aaaCercasi">
+                <field name="name" string="Type" />
+            </search>
+        </field>
+    </record>
+</odoo>

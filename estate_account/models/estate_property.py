@@ -11,12 +11,12 @@ class EstateAccountProperty(models.Model):
             values['move_type'] = 'out_invoice'
             values['invoice_line_ids'] = [
                 Command.create({
-                    "name": "Monica",
+                    "name": "6% of the selling price",
                     "quantity": 1,
                     "price_unit": (6 * prop.selling_price) / 100.0
                 }),
                 Command.create({
-                    "name": "Silent witch",
+                    "name": "Administrative fees",
                     "quantity": 1,
                     "price_unit": 100.0
                 })

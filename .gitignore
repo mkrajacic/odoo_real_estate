@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+/.venv
+/.pytest_cache
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+dist/
+dist_wo_pbr/
+lib64/
+parts/
+sdist/
+var/
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Visual Studio cache/options directory
+.vs/
+.vscode
